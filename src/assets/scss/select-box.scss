@@ -1,0 +1,56 @@
+.custom-select {
+    position: relative;
+    font-family: 'Roboto-regular';
+    color: $dark-gray;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-color: $light-gray transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent $light-gray transparent;
+    top: 6px;
+}
+
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 10px;
+    border: 1px solid $light-gray;
+    cursor: pointer;
+    user-select: none;
+    background-color: $white;
+    color: $dark-gray;
+    font-size: 16px;
+}
+
+.select-items {
+    position: absolute;
+    background-color: $white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: $orange;
+    color: $white;
+}

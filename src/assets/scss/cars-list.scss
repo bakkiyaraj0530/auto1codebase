@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+}
+
+.main-container {
+    margin: 0 auto;
+    max-width: 1150px;
+    padding: 20px 0 20px 0;
+}
+
+.header-container {
+    margin: 0 auto;
+    max-width: 1150px;
+}
+
+header {
+    border-bottom: 1px solid $light-gray;
+    padding: 20px;
+    .navigations {
+        list-style-type: none;
+        display: inline-block;
+        float: right;
+        li {
+            display: inline;
+            padding: 0 10px;
+            font-family: 'Roboto-regular';
+            font-size: 14px;
+            color: $dark-gray;
+            cursor: pointer;
+        }
+    }
+}
+
+label {
+    display: block;
+    font-family: 'Roboto-regular';
+    font-size: 14px;
+    color: $dark-gray;
+    margin: 10px 0;
+}
+
+.select-box {
+    background: none;
+    border: 1px solid $light-gray;
+    width: 100%;
+    padding: 8px 10px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Roboto-regular';
+    font-size: 14px;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.custom-btn {
+    background: $orange;
+    height: 32px;
+    width: 128px;
+    border: none;
+    font-family: 'Roboto-regular';
+    font-size: 14px;
+    color: $white;
+    float: right;
+    border-raidus: 5px;
+    cursor: pointer;
+    &:focus {
+        background: $dark-orange;
+        outline: none;
+    }
+    &:hover {
+        background: $dark-orange;
+        outline: none;
+    }
+}
+
+.left-container {
+    width: 28%;
+    display: inline-block;
+    margin-top: 10px;
+    .filter-wrapper {
+        border: 2px solid $light-gray;
+        padding: 30px;
+        height: 200px;
+        .filter-btn {
+            margin: 25px 0;
+        }
+    }
+}
+
+.right-container {
+    min-width: 69%;
+    float: right;
+    display: inline-block;
+    .head-wrapper {
+        margin-bottom: 25px;
+        .text-wrapper {
+            widows: 50%;
+            display: inline-block;
+        }
+        .bold-text {
+            font-family: 'Roboto-bold';
+            font-size: 18px;
+            color: $dark-gray;
+            margin: 8px 0;
+        }
+        .results {
+            font-family: 'Roboto-regular';
+            font-size: 16px;
+            color: $dark-gray;
+            margin: 8px 0;
+        }
+        .sort-section {
+            float: right;
+            .custom-select {
+                min-width: 250px;
+            }
+        }
+    }
+    .results-container {
+        .result-wrapper {
+            display: flex;
+            padding: 15px;
+            border: 2px solid $light-gray;
+            margin-bottom: 15px;
+            .thumb-image {}
+            .content-section {
+                padding: 0 30px;
+                width: 100%;
+                .title {
+                    font-family: 'Roboto-regular';
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: $dark-gray;
+                    margin: 8px 0;
+                }
+                .description {
+                    font-family: 'Roboto-regular';
+                    font-size: 16px;
+                    color: $dark-gray;
+                    margin: 8px 0;
+                }
+            }
+        }
+    }
+    .link {
+        color: $orange;
+        text-decoration: none;
+        font-family: 'Roboto-medium';
+        font-size: 14px;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    .pagination {
+        padding: 10px 0 25px 0;
+        text-align: center;
+        .page-number {
+            font-family: 'Roboto-medium';
+            font-size: 12px;
+            color: $dark-gray;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .link {
+            font-size: 14px;
+            display: inline-block;
+            margin: 0 10px;
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid $light-gray;
+    padding: 30px 0;
+    clear: both;
+    .copyright {
+        text-align: center;
+        font-family: 'Roboto-regular';
+        font-size: 14px;
+        color: $dark-gray;
+        margin: 0;
+    }
+}
