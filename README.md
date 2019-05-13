@@ -1,21 +1,17 @@
 
 # Get Started
 
-1. **Initial Machine Setup**
+1. **Clone the project**
 
-    First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
+    `git clone https://github.com/bakkiyaraj0530/auto1codebase.git`.
 
-2. **Clone the project**
-
-    `git clone https://github.com/coryhouse/react-slingshot.git`.
-
-3. **Run the setup script**
+2. **Run the setup script**
 
     `npm run setup`
 
-4. **Run the example app**
+3. **Run the example app**
 
-    `npm start -s`
+    `npm start`
 
     This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 
