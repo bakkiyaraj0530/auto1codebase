@@ -11,9 +11,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
-import Filter from '../../Filter';
-import CarList from '../../CarList';
-import * as actions from './actions';
+import Filter from '../../components/Filter';
+import CarList from '../../components/CarList';
+import * as actions from '../../../actions/listingCarsActions';
+import LoadingIndicator from '../../components/LoadingIndicator'
 
 export class ListingCars extends React.Component {
 
@@ -25,7 +26,6 @@ export class ListingCars extends React.Component {
     const defaultQ = {
       page: 1,
     };
-    console.log(this.props.actions)
     this.props.actions.getCarsData(defaultQ);
     this.props.actions.getColors();
     this.props.actions.getManufactors();
@@ -35,50 +35,6 @@ export class ListingCars extends React.Component {
     currentPage: 1,
   }
 
-  // styleFilterDropDown = () => {
-
-  //   let x, i, j, selElmnt, a, b, c;
-  //   x = document.getElementsByClassName("custom-select");
-  //   for (i = 0; i < x.length; i++) {
-  //     selElmnt = x[i].getElementsByTagName("select")[0];
-  //     a = document.createElement("DIV");
-  //     a.setAttribute("class", "select-selected");
-  //     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  //     x[i].appendChild(a);
-  //     b = document.createElement("DIV");
-  //     b.setAttribute("class", "select-items select-hide");
-  //     for (j = 1; j < selElmnt.length; j++) {
-  //       c = document.createElement("DIV");
-  //       c.innerHTML = selElmnt.options[j].innerHTML;
-  //       c.addEventListener("click", function (e) {
-  //         let y, i, k, s, h;
-  //         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-  //         h = this.parentNode.previousSibling;
-  //         for (i = 0; i < s.length; i++) {
-  //           if (s.options[i].innerHTML == this.innerHTML) {
-  //             s.selectedIndex = i;
-  //             h.innerHTML = this.innerHTML;
-  //             y = this.parentNode.getElementsByClassName("same-as-selected");
-  //             for (k = 0; k < y.length; k++) {
-  //               y[k].removeAttribute("class");
-  //             }
-  //             this.setAttribute("class", "same-as-selected");
-  //             break;
-  //           }
-  //         }
-  //         h.click();
-  //       });
-  //       b.appendChild(c);
-  //     }
-  //     x[i].appendChild(b);
-  //     a.addEventListener("click", function (e) {
-  //       e.stopPropagation();
-  //       closeAllSelect(this);
-  //       this.nextSibling.classList.toggle("select-hide");
-  //       this.classList.toggle("select-arrow-active");
-  //     });
-  //   }
-  // }
   handleChangeColor = (colorOption) => {
     this.setState({ colorOption });
   }
@@ -111,7 +67,7 @@ export class ListingCars extends React.Component {
   };
 
   handlePageChange = pageNumber => {
-    this.setState({ currentPage: this.state.currentPage + 1 });
+    this.setState({ currentPage: pageNumber });
     const { colorOption, manufOption } = this.state;
 
     const listQuery = {
@@ -148,7 +104,9 @@ export class ListingCars extends React.Component {
       page: 1,
     };
     const { colorOption, manufOption, sortOption, currentPage } = this.state;
-
+    if(this.props.loading) {
+      return <LoadingIndicator />
+    }
     return (
       <article>
         <div className="main-container">

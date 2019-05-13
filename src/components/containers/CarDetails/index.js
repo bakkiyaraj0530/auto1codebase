@@ -1,15 +1,10 @@
 /*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
+ * Car Details page
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from './actions';
 import Banner from '../../../assets/images/banner-image.jpg';
 
 export class CarDetails extends React.Component {
@@ -20,7 +15,15 @@ export class CarDetails extends React.Component {
       showBtn: true,
     });
   }
-
+  componentDidMount() {
+    const id = this.props.location.state.stockNumber;
+    const fId = localStorage.getItem(`carStockID-${id}`);
+    if(fId) {
+      this.setState({ showBtn: false});
+    } else {
+      this.setState({ showBtn: true});
+    }
+  }
   toggleFavoritebtn = id => {
     const fId = localStorage.getItem(`carStockID-${id}`);
     if(fId) {
@@ -31,7 +34,6 @@ export class CarDetails extends React.Component {
     localStorage.setItem(`carStockID-${id}`, id);
     alert('Item has been added into Favourite list !!!');
     this.setState({ showBtn: false});
-
     }
   };
 
@@ -76,25 +78,18 @@ export class CarDetails extends React.Component {
   }
 }
 
-
 CarDetails.propTypes = {
-  // loading: PropTypes.bool,
-  // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  carDetails: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  // onSubmitForm: PropTypes.func,
-  // username: PropTypes.string,
-  actions: PropTypes.object.isRequired,
   location: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 function mapStateToProps(state) {
+  console.log('dispatch', state);
   return {
-    carDetails: state.carDetails
   };
 }
 function mapDispatchToProps(dispatch) {
+  console.log('dispatch', dispatch);
   return {
-    actions: bindActionCreators(actions, dispatch)
   };
 }
 

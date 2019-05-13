@@ -17,8 +17,8 @@ export default {
   },
   listingCars: {
     loading: false,
-    carslisterror: false,
-    carslistdata: '',
+    error: false,
+    carlist: '',
     sort: '',
     payload: 'false',
     color: 'red',
@@ -27,7 +27,4 @@ export default {
     allcolorserror: '',
     allmanuFerror: '',
   },
-  auto: {
-    carInfo: ''
-  }
 };

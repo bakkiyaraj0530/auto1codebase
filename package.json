@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=8",
     "npm": ">=3"
-  }, 
+  },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "remove-demo": "babel-node tools/removeDemo.js",
@@ -38,6 +38,7 @@
     "object-assign": "4.1.1",
     "react": "16.4.2",
     "react-dom": "16.4.2",
+    "react-dropdown-input": "0.1.11",
     "react-helmet": "5.2.1",
     "react-js-pagination": "3.0.2",
     "react-redux": "5.0.7",

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
 
-import AboutPage from "./AboutPage";
-import FuelSavingsPage from "./containers/FuelSavingsPage";
+// import AboutPage from "./AboutPage";
+// import FuelSavingsPage from "./containers/FuelSavingsPage";
 import ListingCars from './containers/ListingCars';
 import CarDetails from './containers/CarDetails';
 
@@ -12,8 +12,8 @@ import React from "react";
 import { hot } from "react-hot-loader";
 import { Helmet } from 'react-helmet';
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../components/components/Header';
+import Footer from '../components/components/Footer';
 
 class App extends React.Component {
   render() {
@@ -31,8 +31,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={ListingCars} />
           <Route path="/details" component={CarDetails} />    
-          <Route path="/fuel-savings" component={FuelSavingsPage} />
-          <Route path="/about" component={AboutPage} />
+          {/* <Route path="/fuel-savings" component={FuelSavingsPage} /> */}
+          {/* <Route path="/about" component={AboutPage} /> */}
           <Route component={NotFoundPage} />
         </Switch>
         <Footer />
