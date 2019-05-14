@@ -14,7 +14,7 @@ import { withRouter } from 'react-router-dom';
 import Filter from '../../components/Filter';
 import CarList from '../../components/CarList';
 import * as actions from '../../../actions/listingCarsActions';
-import LoadingIndicator from '../../components/LoadingIndicator'
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 export class ListingCars extends React.Component {
 
@@ -141,6 +141,7 @@ ListingCars.propTypes = {
   listingCars: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   loadCars: PropTypes.func,
+  loading: PropTypes.bool,
   carslist: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   color: PropTypes.string,
   manufacturer: PropTypes.string,

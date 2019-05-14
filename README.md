@@ -7,7 +7,7 @@
 
 2. **Run the setup script**
 
-    `npm run setup`
+    `npm run insall`
 
 3. **Run the example app**
 

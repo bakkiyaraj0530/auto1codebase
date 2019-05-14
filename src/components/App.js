@@ -1,8 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
 
-// import AboutPage from "./AboutPage";
-// import FuelSavingsPage from "./containers/FuelSavingsPage";
 import ListingCars from './containers/ListingCars';
 import CarDetails from './containers/CarDetails';
 
@@ -30,9 +28,7 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={ListingCars} />
-          <Route path="/details" component={CarDetails} />    
-          {/* <Route path="/fuel-savings" component={FuelSavingsPage} /> */}
-          {/* <Route path="/about" component={AboutPage} /> */}
+          <Route path="/details" component={CarDetails} />
           <Route component={NotFoundPage} />
         </Switch>
         <Footer />
