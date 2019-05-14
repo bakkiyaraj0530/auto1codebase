@@ -7,7 +7,7 @@
 
 2. **Run the setup script**
 
-    `npm run insall`
+    `npm run install`
 
 3. **Run the example app**
 
@@ -19,4 +19,4 @@ There you will see the localhost running in port 3000.
 
 
 Thank you
-Bakkiraj
+Bakkiraj    
